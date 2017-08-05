@@ -1,0 +1,25 @@
+        <div class="jumbotron text-center" id="jumbo">
+            <div class="container">
+                <form id="feed">
+                    <h3>Put your burger in my mouth please :)</h3>
+                    <label for="feed-tray"></label>
+                    <input type="text" id="feed-tray">
+                    <input id="click" type="button" class="btn btn-primary" value="Send!">
+                </form>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div id="served" class="col-6-xs">
+                        <ul>
+                            {{#each burgers}}
+                                <li>
+                                    <button {{this.id}} type="button" class="btn btn-primary">{{this.burger}}</button>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div id="gone" class="col-6-xs">
+                    </div>
+                </div>
+            </div>
+        </div>

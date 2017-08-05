@@ -1,0 +1,16 @@
+body{
+    background-image: url("http://cdn.wallpapersafari.com/21/37/JwCQ52.jpg");
+    padding-left:75px;
+    padding-right:75px;
+    padding-top:75px;
+    padding-bottom:75px;
+}
+
+#jumbo {
+   background: rgb(200, 54, 54);
+   background: rgba(200, 54, 54, 0.5);
+   padding-top:-30px;
+   padding-bottom:-30px;
+   margin-right:100px;
+   margin-left:100px;
+}
