@@ -1,24 +1,37 @@
         <div class="jumbotron text-center" id="jumbo">
             <div class="container">
-                <form id="feed">
-                    <h3>Put your burger in my mouth please :)</h3>
+                <form id="feed" method="POST" action="/create">
+                    <h3>EAT ME!!! :)</h3>
                     <label for="feed-tray"></label>
-                    <input type="text" id="feed-tray">
-                    <input id="click" type="button" class="btn btn-primary" value="Send!">
+                    <input type="text" id="feed-tray" name="eat">
+                    <button type="submit">EAT!!!</button>
                 </form>
             </div>
             <div class="container">
                 <div class="row">
-                    <div id="served" class="col-6-xs">
+                    <div id="served" class="col-xs-6">
                         <ul>
-                            {{#each burgers}}
-                                <li>
-                                    <button {{this.id}} type="button" class="btn btn-primary">{{this.burger}}</button>
-                                </li>
+                            {{#each Burgers}}
+                                {{#unless this.devoured}}
+                                    <li>
+                                        <h3 id="/{{this.Burger_name}}" >{{this.Burger_name}}</h3>
+                                        <button id="{{this.Burger_name}}" type="button" class="btn btn-primary">DEVOUR ME!</button>
+                                    </li>
+                                {{/unless}}
                             {{/each}}
                         </ul>
                     </div>
-                    <div id="gone" class="col-6-xs">
+                    <div id="gone" class="col-xs-6">
+                        <ul>
+                            {{#each Burgers}}
+                                {{#if this.devoured}}
+                                    <li>
+                                        <h3 id="/{{this.Burger_name}}" >{{this.Burger_name}}</h3>
+                                        <button id="{{this.Burger_name}}" type="button" class="btn btn-primary">PUKE ME!</button>
+                                    </li>
+                                {{/if}}
+                            {{/each}}
+                        </ul>
                     </div>
                 </div>
             </div>
